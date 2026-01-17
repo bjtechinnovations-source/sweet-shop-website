@@ -582,7 +582,7 @@
         });
     </script> -->
 
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function () {
             const contactForm = document.getElementById('orderForm');
             const successMessage = document.getElementById('successMessage');
@@ -633,6 +633,30 @@
                         submitBtn.innerHTML = originalBtnText;
                     }
                 });
+            }
+        });
+
+    </script> -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const successMessage = document.getElementById('successMessage');
+            const deliveryDateInput = document.getElementById('delivery-date');
+
+            // Minimum delivery date
+            if (deliveryDateInput) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
+            }
+
+            // Show success message if redirected with success flag
+            if (window.location.search.includes('success=true') && successMessage) {
+                successMessage.classList.add('show');
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 8000);
             }
         });
 
