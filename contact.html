@@ -404,7 +404,7 @@
                     </div>
 
                     <form id="orderForm" name="sweet-shop-order" method="POST" data-netlify="true"
-                        netlify-honeypot="bot-field">
+                        netlify-honeypot="bot-field" action="/">
                         <input type="hidden" name="form-name" value="sweet-shop-order">
 
 
@@ -543,124 +543,10 @@
     </footer>
 
 
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            const form = document.getElementById('orderForm');
-            const successMessage = document.getElementById('successMessage');
-            const deliveryDateInput = document.getElementById('delivery-date');
-
-            // ✅ Set minimum delivery date (Tomorrow)
-            if (deliveryDateInput) {
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
-            }
-
-            // ✅ Handle form submit (Netlify compatible)
-            if (form) {
-                form.addEventListener('submit', function () {
-                    // Netlify handles submission automatically
-                    // No preventDefault here
-                });
-            }
-
-            // ✅ Show success message if redirected with success flag
-            if (
-                window.location.search.includes('success=true') &&
-                successMessage &&
-                form
-            ) {
-                successMessage.classList.add('show');
-                form.reset();
-
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 8000);
-            }
-
-        });
-    </script> -->
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.getElementById('orderForm');
-            const successMessage = document.getElementById('successMessage');
-            const deliveryDateInput = document.getElementById('delivery-date');
-
-            // Minimum delivery date
-            if (deliveryDateInput) {
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
-            }
-
-            // Handle form submit with AJAX
-            if (contactForm) {
-                contactForm.addEventListener('submit', async (e) => {
-                    e.preventDefault(); // Prevent page reload
-
-                    const formData = new FormData(contactForm);
-                    formData.append('form-name', contactForm.getAttribute('name'));
-
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalBtnText = submitBtn.innerHTML;
-
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = 'Sending...';
-
-                    try {
-                        const response = await fetch('/', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                            body: new URLSearchParams(formData).toString()
-                        });
-
-                        if (response.ok) {
-                            successMessage.classList.add('show'); // show success message
-                            contactForm.reset();
-                            setTimeout(() => {
-                                successMessage.classList.remove('show');
-                            }, 8000);
-                        } else {
-                            alert('Form submission failed. Please try again.');
-                        }
-                    } catch (error) {
-                        console.error(error);
-                        alert('Network error. Please try again.');
-                    } finally {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnText;
-                    }
-                });
-            }
-        });
-
-    </script> -->
+   
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const successMessage = document.getElementById('successMessage');
-            const deliveryDateInput = document.getElementById('delivery-date');
-
-            // Minimum delivery date
-            if (deliveryDateInput) {
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
-            }
-
-            // Show success message if redirected with success flag
-            if (window.location.search.includes('success=true') && successMessage) {
-                successMessage.classList.add('show');
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 8000);
-            }
-        });
-
-    </script>
+   
 
 
     <script src="script.js"></script>
