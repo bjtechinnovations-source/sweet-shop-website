@@ -132,59 +132,102 @@ filterButtons.forEach(btn => {
     });
 });
 
-// ===== CONTACT FORM HANDLING =====
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-        
-        // Disable button and show loading state
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending...';
-        
-        try {
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            });
-            
-            if (response.ok) {
-                // Show success message
-                const formContainer = document.querySelector('.form-container');
-                const successMessage = document.getElementById('successMessage');
-                
-                if (formContainer && successMessage) {
-                    formContainer.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    
-                    // Animate success message
-                    successMessage.style.opacity = '0';
-                    successMessage.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        successMessage.style.transition = 'all 0.3s ease';
-                        successMessage.style.opacity = '1';
-                        successMessage.style.transform = 'scale(1)';
-                    }, 50);
-                }
-                
-                // Reset form
-                contactForm.reset();
-            } else {
-                alert('There was an error submitting the form. Please try again.');
-            }
-        } catch (error) {
-            alert('There was an error submitting the form. Please try again.');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
-        }
-    });
-}
+// ===== ORDER / CONTACT FORM HANDLING (NETLIFY) =====
+
+// const contactForm = document.getElementById('orderForm');
+
+// if (contactForm) {
+//     contactForm.addEventListener('submit', async (e) => {
+       
+
+//         const formData = new FormData(contactForm);
+
+//         // Required for Netlify when submitting via JS
+//         formData.append('form-name', contactForm.getAttribute('name'));
+
+//         const submitBtn = contactForm.querySelector('button[type="submit"]');
+//         const originalBtnText = submitBtn.innerHTML;
+
+//         submitBtn.disabled = true;
+//         submitBtn.innerHTML = 'Sending...';
+
+//         try {
+//             const response = await fetch('/', {
+//                 method: 'POST',
+//                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//                 body: new URLSearchParams(formData).toString()
+//             });
+
+//             if (response.ok) {
+//                 alert('Order placed successfully!');
+//                 contactForm.reset();
+//             } else {
+//                 alert('Form submission failed. Please try again.');
+//             }
+//         } catch (error) {
+//             console.error(error);
+//             alert('Network error. Please try again.');
+//         } finally {
+//             submitBtn.disabled = false;
+//             submitBtn.innerHTML = originalBtnText;
+//         }
+//     });
+// }
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const contactForm = document.getElementById('orderForm');
+//     const successMessage = document.getElementById('successMessage');
+//     const deliveryDateInput = document.getElementById('delivery-date');
+
+//     // Minimum delivery date
+//     if (deliveryDateInput) {
+//         const tomorrow = new Date();
+//         tomorrow.setDate(tomorrow.getDate() + 1);
+//         deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
+//     }
+
+//     // Handle form submit with AJAX
+//     if (contactForm) {
+//         contactForm.addEventListener('submit', async (e) => {
+//             e.preventDefault(); // Prevent page reload
+
+//             const formData = new FormData(contactForm);
+//             formData.append('form-name', contactForm.getAttribute('name'));
+
+//             const submitBtn = contactForm.querySelector('button[type="submit"]');
+//             const originalBtnText = submitBtn.innerHTML;
+
+//             submitBtn.disabled = true;
+//             submitBtn.innerHTML = 'Sending...';
+
+//             try {
+//                 const response = await fetch('/', {
+//                     method: 'POST',
+//                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//                     body: new URLSearchParams(formData).toString()
+//                 });
+
+//                 if (response.ok) {
+//                     successMessage.classList.add('show'); // show success message
+//                     contactForm.reset();
+//                     setTimeout(() => {
+//                         successMessage.classList.remove('show');
+//                     }, 8000);
+//                 } else {
+//                     alert('Form submission failed. Please try again.');
+//                 }
+//             } catch (error) {
+//                 console.error(error);
+//                 alert('Network error. Please try again.');
+//             } finally {
+//                 submitBtn.disabled = false;
+//                 submitBtn.innerHTML = originalBtnText;
+//             }
+//         });
+//     }
+// });
+
+
 
 // ===== SCROLL TO TOP ON PAGE LOAD =====
 window.addEventListener('load', () => {

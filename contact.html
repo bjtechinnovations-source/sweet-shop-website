@@ -250,6 +250,62 @@
         .required {
             color: var(--color-pink-500);
         }
+
+
+        .order-form-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: #ff7a18;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background: #e86810;
+        }
+
+        .success-message {
+            display: none;
+            background: #e6fff2;
+            color: #0a7a3c;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 
@@ -301,77 +357,59 @@
     <section class="contact-main-section" id="order-form">
         <div class="container">
             <div class="contact-grid">
-                <!-- Contact Information -->
+
+                <!-- Contact Info -->
                 <div>
                     <div class="contact-info-card" data-aos="fade-right">
                         <h2>Get in Touch</h2>
 
                         <div class="info-item">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                            </div>
+                            <div class="info-icon">📍</div>
                             <div class="info-content">
                                 <h3>Visit Our Store</h3>
-                                <p>EJ 321, Gurudwara Market, Raiz Pura<br>Central Town, Jalandhar<br>Punjab 144001</p>
+                                <p>EJ 321, Gurudwara Market, Raiz Pura<br>
+                                    Central Town, Jalandhar<br>Punjab 144001</p>
                             </div>
                         </div>
 
-
                         <div class="info-item">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                            </div>
+                            <div class="info-icon">📞</div>
                             <div class="info-content">
                                 <h3>Call Us</h3>
-                                <p>+91 9872281511<br>Mon-Sat: 9:00 AM - 9:00 PM</p>
+                                <p>+91 9872281511<br>Mon–Sat: 9 AM – 9 PM</p>
                             </div>
                         </div>
 
                         <div class="info-item">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                </svg>
-                            </div>
+                            <div class="info-icon">✉️</div>
                             <div class="info-content">
                                 <h3>Email Us</h3>
                                 <p>oberoibakers0@gmail.com</p>
                             </div>
                         </div>
-
-                        <div class="opening-hours">
-                            <h3>Opening Hours</h3>
-                            <div class="hours-list">
-                                <p><strong>Monday - Saturday:</strong> 9:00 AM - 9:00 PM</p>
-                                <p><strong>Sunday:</strong> 10:00 AM - 8:00 PM</p>
-                                <p><strong>Festivals:</strong> Special hours apply</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Order Form -->
-                <!-- ORDER FORM CARD -->
+                <!-- ORDER FORM -->
                 <div class="order-form-card" data-aos="fade-left">
                     <h2>Place Your Order</h2>
                     <p>Fill out the form below and we'll get back to you shortly!</p>
 
-                    <form name="sweet-shop-order" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-                        action="./success.html">
-                        <!-- REQUIRED FOR NETLIFY -->
+
+
+
+                    <!-- Success message div -->
+                    <div id="successMessage" class="success-message">
+                        Your order has been placed successfully!
+                    </div>
+
+                    <form id="orderForm" name="sweet-shop-order" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="sweet-shop-order">
 
-                        <!-- Honeypot -->
+
+
+
                         <p style="display:none;">
                             <label>Don’t fill this out: <input name="bot-field"></label>
                         </p>
@@ -379,36 +417,33 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Full Name *</label>
-                                <input type="text" name="name" required placeholder="Enter your name">
+                                <input type="text" name="name" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Phone Number *</label>
-                                <input type="tel" name="phone" required placeholder="+91 98765 43210">
+                                <label>Phone *</label>
+                                <input type="tel" name="phone" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Email *</label>
-                            <input type="email" name="email" required placeholder="your@email.com">
+                            <input type="email" name="email" required>
                         </div>
 
                         <div class="form-group">
                             <label>Delivery Address *</label>
-                            <textarea name="address" required placeholder="Complete address"></textarea>
+                            <textarea name="address" required></textarea>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Select Product *</label>
+                                <label>Product *</label>
                                 <select name="product" required>
-                                    <option value="">Choose product</option>
+                                    <option value="">Select</option>
                                     <option>Gulab Jamun - ₹250</option>
                                     <option>Kaju Katli - ₹450</option>
-                                    <option>Rasgulla - ₹200</option>
                                     <option>Chocolate Cake - ₹550</option>
-                                    <option>Motichoor Ladoo - ₹280</option>
-                                    <option>Premium Gift Box - ₹650</option>
                                     <option>Custom Order</option>
                                 </select>
                             </div>
@@ -420,29 +455,31 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Preferred Delivery Date</label>
-                            <input type="date" name="delivery-date">
+                            <label>Delivery Date</label>
+                            <input type="date" name="delivery-date" id="delivery-date">
                         </div>
 
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea name="message" placeholder="Any special instruction"></textarea>
+                            <textarea name="message"></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">Place Order</button>
                     </form>
                 </div>
 
-
-                <!-- Map Section -->
-                <div class="map-section" data-aos="fade-up">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.1245412709927!2d75.58240817560392!3d31.327933474302704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5b1470162645%3A0xad7cd0305cc7c9d3!2sOberoi%20Bakers!5e0!3m2!1sen!2sin!4v1768574372823!5m2!1sen!2sin"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
             </div>
+        </div>
+        <!-- Map Section -->
+        <div class="map-section" data-aos="fade-up">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.1245412709927!2d75.58240817560392!3d31.327933474302704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5b1470162645%3A0xad7cd0305cc7c9d3!2sOberoi%20Bakers!5e0!3m2!1sen!2sin!4v1768574372823!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -505,49 +542,107 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const form = document.getElementById('orderForm');
+            const successMessage = document.getElementById('successMessage');
+            const deliveryDateInput = document.getElementById('delivery-date');
+
+            // ✅ Set minimum delivery date (Tomorrow)
+            if (deliveryDateInput) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
+            }
+
+            // ✅ Handle form submit (Netlify compatible)
+            if (form) {
+                form.addEventListener('submit', function () {
+                    // Netlify handles submission automatically
+                    // No preventDefault here
+                });
+            }
+
+            // ✅ Show success message if redirected with success flag
+            if (
+                window.location.search.includes('success=true') &&
+                successMessage &&
+                form
+            ) {
+                successMessage.classList.add('show');
+                form.reset();
+
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 8000);
+            }
+
+        });
+    </script> -->
+
     <script>
-        // Form submission handling
-        const form = document.getElementById('orderForm');
-        const successMessage = document.getElementById('successMessage');
-
-        form.addEventListener('submit', function (e) {
-            // For Netlify forms, we don't prevent default
-            // The form will be submitted to Netlify
-            // But we'll show a success message after submission
-
-            // Set minimum date for delivery to tomorrow
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('orderForm');
+            const successMessage = document.getElementById('successMessage');
             const deliveryDateInput = document.getElementById('delivery-date');
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
+
+            // Minimum delivery date
+            if (deliveryDateInput) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
+            }
+
+            // Handle form submit with AJAX
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault(); // Prevent page reload
+
+                    const formData = new FormData(contactForm);
+                    formData.append('form-name', contactForm.getAttribute('name'));
+
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending...';
+
+                    try {
+                        const response = await fetch('/', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                            body: new URLSearchParams(formData).toString()
+                        });
+
+                        if (response.ok) {
+                            successMessage.classList.add('show'); // show success message
+                            contactForm.reset();
+                            setTimeout(() => {
+                                successMessage.classList.remove('show');
+                            }, 8000);
+                        } else {
+                            alert('Form submission failed. Please try again.');
+                        }
+                    } catch (error) {
+                        console.error(error);
+                        alert('Network error. Please try again.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                });
+            }
         });
 
-        // Show success message after form submission (for Netlify redirect)
-        // Note: Netlify will redirect to a success page or show a thank you message
-        // This is a fallback for better UX
-        if (window.location.search.includes('success=true')) {
-            successMessage.classList.add('show');
-            form.reset();
-
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 10000);
-        }
-
-        // Set minimum date on page load
-        window.addEventListener('DOMContentLoaded', function () {
-            const deliveryDateInput = document.getElementById('delivery-date');
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
-        });
     </script>
 
-    <!-- Netlify Form Detection (DO NOT REMOVE) -->
+    <!-- ✅ Netlify Form Detection (REQUIRED) -->
     <form name="sweet-shop-order" data-netlify="true" hidden>
         <input type="hidden" name="form-name" value="sweet-shop-order">
     </form>
+    <script src="script.js"></script>
 
 </body>
 
