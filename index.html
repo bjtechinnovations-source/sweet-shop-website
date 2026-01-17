@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights - Fresh & Delicious Indian Sweets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">🍬</div>
+                    <span class="logo-text">Oberoi Bakers</span>
+                </a>
+
+                <div class="nav-links desktop-menu">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-nav-link active">Home</a>
+                <a href="about.html" class="mobile-nav-link">About Us</a>
+                <a href="products.html" class="mobile-nav-link">Products</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container hero-content">
+            <span class="hero-subtitle fade-in-up">Welcome to Sweet Delights</span>
+            <h1 class="hero-title fade-in-up">Fresh & Delicious Sweets<br>Made With Love</h1>
+            <p class="hero-description fade-in-up">Experience the authentic taste of traditional Indian mithai, crafted with premium ingredients and time-honored recipes</p>
+            <div class="hero-buttons fade-in-up">
+                <a href="contact.html#order-form" class="btn btn-primary">Order Now</a>
+                <a href="products.html" class="btn btn-secondary">View Products</a>
+            </div>
+        </div>
+
+        <div class="floating-emoji floating-emoji-1">🍬</div>
+        <div class="floating-emoji floating-emoji-2">🧁</div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-description">Explore our handpicked selection of premium sweets and delicacies</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-image-wrapper">
+                        <img src="./images/Gulab Jamun.jpeg" alt="Gulab Jamun" class="product-image">
+                        <span class="product-badge badge-bestseller">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Gulab Jamun</h3>
+                        <p class="product-price">₹250</p>
+                       <button class="btn btn-cart btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image-wrapper">
+                        <img src="./images/Kaju Katli.webp" alt="Kaju Katli" class="product-image">
+                        <span class="product-badge badge-fresh">Fresh Today</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kaju Katli</h3>
+                        <p class="product-price">₹450</p>
+                       <button class="btn btn-cart btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image-wrapper">
+                        <img src="./images/Rasgulla.webp" alt="Rasgulla" class="product-image">
+                        <span class="product-badge badge-special">Special Today</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Rasgulla</h3>
+                        <p class="product-price">₹200</p>
+                        <button class="btn btn-cart btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image-wrapper">
+                        <img src="./images/Chocolate Cake.webp" alt="Chocolate Cake" class="product-image">
+                        <span class="product-badge badge-new">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Chocolate Cake</h3>
+                        <p class="product-price">₹550</p>
+                        <button class="btn btn-cart btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers-section">
+        <div class="offers-bg-pattern"></div>
+        <div class="container">
+            <div class="offers-card" data-aos="zoom-in">
+                <div class="offer-badge">🎉 Special Today</div>
+                <h2 class="offers-title">Get 20% Off on All Orders</h2>
+                <p class="offers-description">Limited time offer! Order now and enjoy fresh, delicious sweets with amazing discounts</p>
+                <a href="contact.html#order-form" class="btn btn-offer">Claim Offer Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-gradient">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-description">Experience excellence in every bite with our commitment to quality</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">Only the finest ingredients</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </div>
+                    <h3 class="feature-title">Made with Love</h3>
+                    <p class="feature-description">Traditional recipes passed down</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </div>
+                    <h3 class="feature-title">Fresh Daily</h3>
+                    <p class="feature-description">Prepared fresh every morning</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3 class="feature-title">Customer Favorite</h3>
+                    <p class="feature-description">Rated 5 stars by customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-description">Join thousands of satisfied customers who love our sweets</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-right">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"The best sweets in town! Fresh, delicious, and authentic taste. My family loves the gulab jamun!"</p>
+                    <h4 class="testimonial-author">Priya Sharma</h4>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Exceptional quality and service. The traditional recipes remind me of my childhood. Highly recommended!"</p>
+                    <h4 class="testimonial-author">Rajesh Kumar</h4>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-left" data-aos-delay="400">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Amazing variety and the presentation is beautiful. Perfect for gifting on special occasions!"</p>
+                    <h4 class="testimonial-author">Anjali Mehta</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🍬</div>
+                        <span class="logo-text">Oberoi Bakers</span>
+                    </div>
+                    <p class="footer-description">
+                        Since 1990, Oberoi Bakers has been serving generations with freshly made sweets
+                        and bakery delights, crafted with love, tradition, and honesty.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <div class="footer-contact">
+                        <p>📍 EJ 321, Gurudwara Market, Raiz Pura, Central Town, Jalandhar, Punjab 144001</p>
+                        <p>📞 +91 9872281511</p>
+                        <p>📧 oberoibakers0@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025-2026 Oberoi Bakers. All rights reserved. Made with ❤️ in BJ TECH INNOVATIONS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
