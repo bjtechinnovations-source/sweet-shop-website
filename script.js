@@ -21,7 +21,7 @@ mobileNavLinks.forEach(link => {
 // ===== ACTIVE NAV LINK =====
 function setActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
+
     // Desktop menu
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -32,7 +32,7 @@ function setActiveNavLink() {
             link.classList.remove('active');
         }
     });
-    
+
     // Mobile menu
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     mobileLinks.forEach(link => {
@@ -96,7 +96,7 @@ if (document.readyState === 'loading') {
 function filterProducts(category) {
     const productCards = document.querySelectorAll('.product-card');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    
+
     // Update active button
     filterButtons.forEach(btn => {
         btn.classList.remove('active');
@@ -104,7 +104,7 @@ function filterProducts(category) {
             btn.classList.add('active');
         }
     });
-    
+
     // Filter products
     productCards.forEach(card => {
         const productCategory = card.dataset.category;
@@ -132,121 +132,69 @@ filterButtons.forEach(btn => {
     });
 });
 
-// ===== ORDER / CONTACT FORM HANDLING (NETLIFY) =====
+// ===== ORDER / CONTACT FORM =====
 
-// const contactForm = document.getElementById('orderForm');
 
-// if (contactForm) {
-//     contactForm.addEventListener('submit', async (e) => {
-       
 
-//         const formData = new FormData(contactForm);
 
-//         // Required for Netlify when submitting via JS
-//         formData.append('form-name', contactForm.getAttribute('name'));
+const form = document.getElementById("orderForm");
+const popup = document.getElementById("orderPopup");
+const whatsappBtn = document.querySelector(".popup-btn.secondary");
 
-//         const submitBtn = contactForm.querySelector('button[type="submit"]');
-//         const originalBtnText = submitBtn.innerHTML;
+form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Prevent page reload
+    const formData = new FormData(form);
 
-//         submitBtn.disabled = true;
-//         submitBtn.innerHTML = 'Sending...';
-
-//         try {
-//             const response = await fetch('/', {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//                 body: new URLSearchParams(formData).toString()
-//             });
-
-//             if (response.ok) {
-//                 alert('Order placed successfully!');
-//                 contactForm.reset();
-//             } else {
-//                 alert('Form submission failed. Please try again.');
-//             }
-//         } catch (error) {
-//             console.error(error);
-//             alert('Network error. Please try again.');
-//         } finally {
-//             submitBtn.disabled = false;
-//             submitBtn.innerHTML = originalBtnText;
-//         }
-//     });
-// }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const contactForm = document.getElementById('orderForm');
-//     const successMessage = document.getElementById('successMessage');
-//     const deliveryDateInput = document.getElementById('delivery-date');
-
-//     // Minimum delivery date
-//     if (deliveryDateInput) {
-//         const tomorrow = new Date();
-//         tomorrow.setDate(tomorrow.getDate() + 1);
-//         deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
-//     }
-
-//     // Handle form submit with AJAX
-//     if (contactForm) {
-//         contactForm.addEventListener('submit', async (e) => {
-//             e.preventDefault(); // Prevent page reload
-
-//             const formData = new FormData(contactForm);
-//             formData.append('form-name', contactForm.getAttribute('name'));
-
-//             const submitBtn = contactForm.querySelector('button[type="submit"]');
-//             const originalBtnText = submitBtn.innerHTML;
-
-//             submitBtn.disabled = true;
-//             submitBtn.innerHTML = 'Sending...';
-
-//             try {
-//                 const response = await fetch('/', {
-//                     method: 'POST',
-//                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//                     body: new URLSearchParams(formData).toString()
-//                 });
-
-//                 if (response.ok) {
-//                     successMessage.classList.add('show'); // show success message
-//                     contactForm.reset();
-//                     setTimeout(() => {
-//                         successMessage.classList.remove('show');
-//                     }, 8000);
-//                 } else {
-//                     alert('Form submission failed. Please try again.');
-//                 }
-//             } catch (error) {
-//                 console.error(error);
-//                 alert('Network error. Please try again.');
-//             } finally {
-//                 submitBtn.disabled = false;
-//                 submitBtn.innerHTML = originalBtnText;
-//             }
-//         });
-//     }
-// });
-    document.addEventListener('DOMContentLoaded', function () {
-            const successMessage = document.getElementById('successMessage');
-            const deliveryDateInput = document.getElementById('delivery-date');
-
-            // Minimum delivery date
-            if (deliveryDateInput) {
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                deliveryDateInput.min = tomorrow.toISOString().split('T')[0];
-            }
-
-            // Show success message if redirected with success flag
-            if (window.location.search.includes('success=true') && successMessage) {
-                successMessage.classList.add('show');
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 8000);
-            }
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" }
         });
 
-   
+        if (response.ok) {
+            form.reset(); // Clear the form
+            popup.classList.add("show"); // Show popup
+
+            // Prepare WhatsApp message
+            const name = formData.get("name");
+            const phone = formData.get("phone");
+            const email = formData.get("email");
+            const address = formData.get("address");
+            const product = formData.get("product");
+            const quantity = formData.get("quantity");
+            const delivery_date = formData.get("delivery_date") || "Not specified";
+            const message = formData.get("message") || "No message";
+
+            const whatsappMessage = `Hello Oberoi Bakers!%0A%0A` +
+                `New Order Details:%0A` +
+                `Name: ${encodeURIComponent(name)}%0A` +
+                `Phone: ${encodeURIComponent(phone)}%0A` +
+                `Email: ${encodeURIComponent(email)}%0A` +
+                `Address: ${encodeURIComponent(address)}%0A` +
+                `Product: ${encodeURIComponent(product)}%0A` +
+                `Quantity: ${encodeURIComponent(quantity)}%0A` +
+                `Delivery Date: ${encodeURIComponent(delivery_date)}%0A` +
+                `Message: ${encodeURIComponent(message)}`;
+
+            // WhatsApp link (India number)
+            whatsappBtn.setAttribute("href", `https://wa.me/919872281511?text=${whatsappMessage}`);
+
+        } else {
+            alert("❌ Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        alert("❌ Network error. Please try again.");
+    }
+});
+
+// Close popup
+function closePopup() {
+    popup.classList.remove("show");
+}
+
+
+
 
 
 // ===== SCROLL TO TOP ON PAGE LOAD =====
@@ -260,24 +208,24 @@ const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 50) {
         navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.15)';
     } else {
         navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
     }
-    
+
     lastScroll = currentScroll;
 });
 
 // ===== ADD TO CART BUTTON FEEDBACK =====
 const cartButtons = document.querySelectorAll('.btn-cart');
 cartButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         const originalText = this.textContent;
         this.textContent = '✓ Added!';
         this.style.backgroundColor = '#10b981';
-        
+
         setTimeout(() => {
             this.textContent = originalText;
             this.style.backgroundColor = '';
@@ -288,11 +236,11 @@ cartButtons.forEach(btn => {
 // ===== TESTIMONIAL CARDS HOVER EFFECT =====
 const testimonialCards = document.querySelectorAll('.testimonial-card');
 testimonialCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
     });
 });
