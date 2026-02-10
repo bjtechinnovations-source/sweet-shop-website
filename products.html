@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         .products-hero {
             height: 50vh;
@@ -16,13 +19,13 @@
             overflow: hidden;
             padding-top: 5rem;
         }
-        
+
         .filter-section {
             padding: 3rem 0 2rem;
             background-color: var(--color-white);
             border-bottom: 2px solid var(--color-gray-100);
         }
-        
+
         .filter-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -30,7 +33,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .filter-btn {
             padding: 0.75rem 1.5rem;
             border: 2px solid var(--color-orange-500);
@@ -43,7 +46,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .filter-btn:hover,
         .filter-btn.active {
             background: linear-gradient(to right, var(--color-orange-500), var(--color-pink-500));
@@ -51,30 +54,30 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .products-main-section {
             padding: 4rem 0;
             background-color: var(--color-gray-100);
         }
-        
+
         .all-products-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
         }
-        
+
         @media (min-width: 640px) {
             .all-products-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (min-width: 1024px) {
             .all-products-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
-        
+
         .product-full-card {
             background-color: var(--color-white);
             border-radius: 1.25rem;
@@ -83,29 +86,29 @@
             transition: all 0.4s ease;
             position: relative;
         }
-        
+
         .product-full-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-2xl);
         }
-        
+
         .product-full-card .product-image-wrapper {
             position: relative;
             overflow: hidden;
             height: 280px;
         }
-        
+
         .product-full-card .product-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .product-full-card:hover .product-image {
             transform: scale(1.1);
         }
-        
+
         .product-full-card .product-badge {
             position: absolute;
             top: 1rem;
@@ -117,27 +120,27 @@
             font-size: 0.75rem;
             color: var(--color-white);
         }
-        
+
         .badge-bestseller {
             background: linear-gradient(to right, var(--color-orange-500), var(--color-pink-500));
         }
-        
+
         .badge-fresh {
             background: linear-gradient(to right, #10b981, #14b8a6);
         }
-        
+
         .badge-new {
             background: linear-gradient(to right, #8b5cf6, #ec4899);
         }
-        
+
         .badge-special {
             background: linear-gradient(to right, #f59e0b, #ef4444);
         }
-        
+
         .product-full-card .product-info {
             padding: 1.5rem;
         }
-        
+
         .product-full-card .product-name {
             font-family: var(--font-playfair);
             font-size: 1.375rem;
@@ -145,7 +148,7 @@
             color: var(--color-gray-900);
             margin-bottom: 0.5rem;
         }
-        
+
         .product-full-card .product-description {
             font-family: var(--font-inter);
             font-size: 0.9rem;
@@ -153,7 +156,7 @@
             margin-bottom: 1rem;
             line-height: 1.5;
         }
-        
+
         .product-full-card .product-price {
             font-family: var(--font-poppins);
             font-size: 1.5rem;
@@ -161,14 +164,14 @@
             color: var(--color-orange-600);
             margin-bottom: 1rem;
         }
-        
+
         .product-full-card .product-weight {
             font-family: var(--font-inter);
             font-size: 0.85rem;
             color: var(--color-gray-600);
             margin-bottom: 1rem;
         }
-        
+
         .product-full-card .btn-order {
             width: 100%;
             padding: 0.875rem;
@@ -182,26 +185,26 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .product-full-card .btn-order:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .cta-section {
             padding: 5rem 0;
             background: linear-gradient(135deg, var(--color-orange-500), var(--color-pink-500));
             color: var(--color-white);
             text-align: center;
         }
-        
+
         .cta-section h2 {
             font-family: var(--font-playfair);
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
-        
+
         .cta-section p {
             font-family: var(--font-inter);
             font-size: 1.25rem;
@@ -210,7 +213,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .cta-section .btn-cta {
             display: inline-block;
             padding: 1rem 2.5rem;
@@ -222,13 +225,14 @@
             font-size: 1.125rem;
             transition: all 0.3s ease;
         }
-        
+
         .cta-section .btn-cta:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-2xl);
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -262,21 +266,26 @@
     <!-- Hero Section -->
     <section class="products-hero">
         <div class="hero-bg-pattern"></div>
-        <div class="container" style="position: relative; z-index: 10; text-align: center; color: white; padding-top: 6rem;">
-            <h1 class="fade-in-up" style="font-family: var(--font-playfair); font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem;">Our Products</h1>
-            <p class="fade-in-up" style="font-family: var(--font-inter); font-size: 1.25rem; max-width: 48rem; margin: 0 auto;">Discover our exquisite collection of handcrafted Indian sweets and delicacies</p>
+        <div class="container"
+            style="position: relative; z-index: 10; text-align: center; color: white; padding-top: 6rem;">
+            <h1 class="fade-in-up"
+                style="font-family: var(--font-playfair); font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem;">Our
+                Products</h1>
+            <p class="fade-in-up"
+                style="font-family: var(--font-inter); font-size: 1.25rem; max-width: 48rem; margin: 0 auto;">Discover
+                our exquisite collection of handcrafted Indian sweets and delicacies</p>
         </div>
     </section>
 
     <!-- Filter Section -->
+
     <section class="filter-section">
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Products</button>
-                <button class="filter-btn" data-category="traditional">Traditional Sweets</button>
-                <button class="filter-btn" data-category="fusion">Fusion Sweets</button>
-                <button class="filter-btn" data-category="cakes">Cakes & Pastries</button>
-                <button class="filter-btn" data-category="special">Special Occasions</button>
+                <button class="filter-btn" data-category="biscuits">Biscuits</button>
+                <button class="filter-btn" data-category="cakes">Cakes</button>
+                <button class="filter-btn" data-category="healthy">Healthy (Atta)</button>
             </div>
         </div>
     </section>
@@ -285,185 +294,92 @@
     <section class="products-main-section">
         <div class="container">
             <div class="all-products-grid">
-                <!-- Product 1: Gulab Jamun -->
-                <div class="product-full-card" data-aos="fade-up" data-category="traditional">
+
+                <!-- Butter Cookies -->
+                <div class="product-full-card" data-aos="fade-up" data-category="biscuits">
                     <div class="product-image-wrapper">
-                        <img src="./images/Gulab Jamun.jpeg" alt="Gulab Jamun" class="product-image">
+                        <img src="./images/Butter Biscuit.jpeg" alt="Butter Cookies" class="product-image">
                         <span class="product-badge badge-bestseller">Best Seller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Gulab Jamun</h3>
-                        <p class="product-description">Soft, spongy milk dumplings soaked in aromatic rose-flavored syrup</p>
-                        <p class="product-weight">Weight: 500g (Approx. 10 pcs)</p>
+                        <h3 class="product-name">Butter Cookies</h3>
+                        <p class="product-description">Classic crispy butter cookies with rich buttery taste</p>
+                        <p class="product-weight">Weight: 1 Kg</p>
+                        <p class="product-price">₹300</p>
+                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atta Jeera Biscuit -->
+                <div class="product-full-card" data-aos="fade-up" data-aos-delay="100" data-category="healthy">
+                    <div class="product-image-wrapper">
+                        <img src="./images/Jeera Biscuit.jpeg" alt="Atta Jeera Biscuit" class="product-image">
+                        <span class="product-badge badge-healthy">Healthy</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Jeera Biscuit</h3>
+                        <p class="product-description">Whole wheat atta biscuits baked with aromatic jeera</p>
+                        <p class="product-weight">Weight: 1 Kg</p>
+                        <p class="product-price">₹280</p>
+                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atta Biscuit -->
+                <div class="product-full-card" data-aos="fade-up" data-aos-delay="200" data-category="healthy">
+                    <div class="product-image-wrapper">
+                        <img src="./images/Atta Biscuit.jpeg" alt="Atta Biscuit" class="product-image">
+                        <span class="product-badge badge-fresh">Fresh Baked</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Atta Biscuit</h3>
+                        <p class="product-description">Soft & crunchy whole wheat atta biscuits</p>
+                        <p class="product-weight">Weight: 1 Kg</p>
                         <p class="product-price">₹250</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">
+                            Order Now
+                        </button>
                     </div>
                 </div>
 
-                <!-- Product 2: Kaju Katli -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="100" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Kaju Katli.webp" alt="Kaju Katli" class="product-image">
-                        <span class="product-badge badge-fresh">Fresh Today</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Kaju Katli</h3>
-                        <p class="product-description">Premium cashew fudge with edible silver leaf, a royal delicacy</p>
-                        <p class="product-weight">Weight: 500g</p>
-                        <p class="product-price">₹450</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 3: Rasgulla -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="200" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Rasgulla.webp" alt="Rasgulla" class="product-image">
-                        <span class="product-badge badge-special">Special Today</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Rasgulla</h3>
-                        <p class="product-description">Juicy cottage cheese balls in light sugar syrup</p>
-                        <p class="product-weight">Weight: 500g (Approx. 8 pcs)</p>
-                        <p class="product-price">₹200</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 4: Chocolate Cake -->
+                <!-- Plain Cake -->
                 <div class="product-full-card" data-aos="fade-up" data-aos-delay="300" data-category="cakes">
                     <div class="product-image-wrapper">
-                        <img src="./images/Chocolate Cake.webp" alt="Chocolate Cake" class="product-image">
-                        <span class="product-badge badge-new">New</span>
+                        <img src="./images/Cake.jpeg" alt="Plain Cake" class="product-image">
+                        <span class="product-badge badge-popular">Popular</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Chocolate Cake</h3>
-                        <p class="product-description">Rich, moist chocolate cake with ganache frosting</p>
-                        <p class="product-weight">Weight: 1kg</p>
-                        <p class="product-price">₹550</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                        <h3 class="product-name">Plain Cake</h3>
+                        <p class="product-description">Soft and fluffy plain vanilla tea-time cake</p>
+                        <p class="product-weight">Weight: 1 Kg</p>
+                        <p class="product-price">₹300</p>
+                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">
+                            Order Now
+                        </button>
                     </div>
                 </div>
 
-                <!-- Product 5: Motichoor Ladoo -->
-                <div class="product-full-card" data-aos="fade-up" data-category="traditional">
+                <!-- Rusk -->
+                <div class="product-full-card" data-aos="fade-up" data-category="biscuits">
                     <div class="product-image-wrapper">
-                        <img src="./images/Motichoor Ladoo.jpg" alt="Motichoor Ladoo" class="product-image">
-                        <span class="product-badge badge-bestseller">Best Seller</span>
+                        <img src="./images/Rusk.jpeg" alt="Cake Rusk" class="product-image">
+                        <span class="product-badge badge-tea">Tea Special</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Motichoor Ladoo</h3>
-                        <p class="product-description">Golden pearl-like ladoos made with gram flour and ghee</p>
-                        <p class="product-weight">Weight: 500g (Approx. 12 pcs)</p>
-                        <p class="product-price">₹280</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
+                        <h3 class="product-name">Rusk</h3>
+                        <p class="product-description">Crunchy twice-baked cake rusk, perfect with tea</p>
+                        <p class="product-weight">Weight: 1 Kg</p>
+                        <p class="product-price">₹120</p>
+                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">
+                            Order Now
+                        </button>
                     </div>
                 </div>
 
-                <!-- Product 6: Barfi Mix -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="100" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Barfi Mix.jpg" alt="Barfi Mix" class="product-image">
-                        <span class="product-badge badge-special">Special</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Barfi Mix</h3>
-                        <p class="product-description">Assorted barfi varieties - coconut, pistachio, chocolate</p>
-                        <p class="product-weight">Weight: 500g (Mixed)</p>
-                        <p class="product-price">₹320</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 7: Soan Papdi -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="200" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Soan Papdi.webp" alt="Soan Papdi" class="product-image">
-                        <span class="product-badge badge-fresh">Fresh</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Soan Papdi</h3>
-                        <p class="product-description">Crispy, flaky sweet with cardamom and nuts</p>
-                        <p class="product-weight">Weight: 500g</p>
-                        <p class="product-price">₹180</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 8: Peda -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="300" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Milk Peda.webp" alt="Peda" class="product-image">
-                        <span class="product-badge badge-bestseller">Best Seller</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Milk Peda</h3>
-                        <p class="product-description">Traditional milk sweet with cardamom and saffron</p>
-                        <p class="product-weight">Weight: 500g (Approx. 20 pcs)</p>
-                        <p class="product-price">₹240</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 9: Jalebi -->
-                <div class="product-full-card" data-aos="fade-up" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Jalebi.jpg" alt="Jalebi" class="product-image">
-                        <span class="product-badge badge-fresh">Fresh Today</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Jalebi</h3>
-                        <p class="product-description">Crispy spiral sweets dipped in saffron sugar syrup</p>
-                        <p class="product-weight">Weight: 500g</p>
-                        <p class="product-price">₹160</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 10: Chocolate Barfi -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="100" data-category="fusion">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Chocolate Barfi.jpg" alt="Chocolate Barfi" class="product-image">
-                        <span class="product-badge badge-new">New</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Chocolate Barfi</h3>
-                        <p class="product-description">Modern fusion of traditional barfi with Belgian chocolate</p>
-                        <p class="product-weight">Weight: 500g</p>
-                        <p class="product-price">₹380</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 11: Rasmalai -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="200" data-category="traditional">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Rasmalai.jpg" alt="Rasmalai" class="product-image">
-                        <span class="product-badge badge-special">Special</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Rasmalai</h3>
-                        <p class="product-description">Soft cottage cheese patties in rich, creamy saffron milk</p>
-                        <p class="product-weight">Weight: 500g (6 pcs)</p>
-                        <p class="product-price">₹290</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
-
-                <!-- Product 12: Special Gift Box -->
-                <div class="product-full-card" data-aos="fade-up" data-aos-delay="300" data-category="special">
-                    <div class="product-image-wrapper">
-                        <img src="./images/Premium Gift Box.jpg" alt="Gift Box" class="product-image">
-                        <span class="product-badge badge-bestseller">Most Popular</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Premium Gift Box</h3>
-                        <p class="product-description">Curated selection of our finest sweets in elegant packaging</p>
-                        <p class="product-weight">Weight: 1kg (Assorted)</p>
-                        <p class="product-price">₹650</p>
-                        <button class="btn-order" onclick="window.location.href='contact.html#order-form'">Order Now</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -472,7 +388,8 @@
     <section class="cta-section">
         <div class="container">
             <h2 data-aos="fade-up">Can't Find What You're Looking For?</h2>
-            <p data-aos="fade-up" data-aos-delay="100">We offer custom orders and special arrangements for all occasions. Get in touch with us!</p>
+            <p data-aos="fade-up" data-aos-delay="100">We offer custom orders and special arrangements for all
+                occasions. Get in touch with us!</p>
             <a href="contact.html" class="btn-cta" data-aos="zoom-in" data-aos-delay="200">Contact Us</a>
         </div>
     </section>
@@ -486,7 +403,7 @@
                         <div class="logo-icon">🍬</div>
                         <span class="logo-text">Oberoi Bakers</span>
                     </div>
-                   <p class="footer-description">
+                    <p class="footer-description">
                         Since 1990, Oberoi Bakers has been serving generations with freshly made sweets
                         and bakery delights, crafted with love, tradition, and honesty.
                     </p>
@@ -509,13 +426,25 @@
                     </div>
                     <div class="social-links">
                         <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
                         </a>
                         <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
                         </a>
                         <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -543,7 +472,7 @@
 
                 productCards.forEach(card => {
                     const cardCategory = card.getAttribute('data-category');
-                    
+
                     if (category === 'all' || cardCategory === category) {
                         card.style.display = 'block';
                         setTimeout(() => {
@@ -562,4 +491,5 @@
         });
     </script>
 </body>
+
 </html>
